@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/login/page": "/login",
+  "/flashcards/page": "/flashcards",
+  "/library/page": "/library",
+  "/onboarding/page": "/onboarding",
+  "/plan/page": "/plan",
+  "/page": "/",
+  "/profile/page": "/profile",
+  "/dashboard/page": "/dashboard",
+  "/quiz/page": "/quiz",
+  "/signup/page": "/signup",
+  "/workspace/page": "/workspace"
+}

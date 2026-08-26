@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/flashcards/page": "app/flashcards/page.js",
+  "/plan/page": "app/plan/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/library/page": "app/library/page.js",
+  "/onboarding/page": "app/onboarding/page.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/quiz/page": "app/quiz/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/workspace/page": "app/workspace/page.js"
+}

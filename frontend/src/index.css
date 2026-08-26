@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  font-family: "Space Grotesk", sans-serif;
+  color: #20213a;
+  background: #dfe9ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+
+.game-page {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,.7) 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,.55) 0 2px, transparent 3px),
+    linear-gradient(135deg, #dce8ff 0%, #eee4ff 52%, #cbeeff 100%);
+  background-size: 46px 46px, 70px 70px, auto;
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background: repeating-linear-gradient(0deg, transparent 0 5px, #6f70a8 6px);
+}
+
+.login-shell {
+  width: min(1080px, 100%);
+  min-height: 100vh;
+  margin: auto;
+  padding: 30px 7vw 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-row, .card-top, .feature-row {
+  font-family: "DM Mono", monospace;
+  letter-spacing: .08em;
+  font-size: 12px;
+}
+
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.brand-mark { color: #ed4e68; font-size: 23px; }
+.status { margin-left: auto; color: #4a9c77; font-size: 10px; }
+
+.hero-copy {
+  max-width: 600px;
+  margin: 12vh 0 34px;
+}
+
+.eyebrow { color: #7169bc; font-family: "DM Mono", monospace; font-size: 12px; }
+h1 { font-size: clamp(50px, 8vw, 94px); line-height: .9; letter-spacing: -.07em; margin: 20px 0; }
+h1 span { color: #786bc9; }
+.subtitle { color: #61627a; font-size: 18px; }
+
+.login-card {
+  width: min(430px, 100%);
+  margin-left: auto;
+  margin-top: -120px;
+  padding: 26px;
+  background: rgba(255,255,255,.78);
+  border: 2px solid #fff;
+  border-radius: 8px;
+  box-shadow: 10px 12px 0 #9d93d5, 0 18px 45px rgba(75, 68, 145, .18);
+}
+
+.card-top { display: flex; justify-content: space-between; color: #807bc1; }
+.login-card h2 { margin: 30px 0 5px; font-size: 27px; }
+.card-help { color: #77778d; margin-bottom: 22px; }
+
+form { display: grid; gap: 12px; }
+input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #c8c7e5;
+  border-radius: 4px;
+  outline: none;
+  background: #fff;
+  color: #20213a;
+}
+input:focus { border-color: #8278d3; box-shadow: 4px 4px 0 #c9c0f1; }
+
+.primary-button, .switch-button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+}
+.primary-button {
+  padding: 15px;
+  margin-top: 5px;
+  color: #fff;
+  background: #786bc9;
+  box-shadow: 4px 4px 0 #51479e;
+  font-family: "DM Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+}
+.primary-button:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #51479e; }
+.switch-button { margin-top: 22px; padding: 0; background: transparent; color: #7169bc; font-size: 12px; }
+.message { color: #5e58a7; font-size: 13px; }
+.feature-row { display: flex; gap: 24px; margin-top: auto; padding-top: 35px; color: #7774aa; }
+
+@media (max-width: 760px) {
+  .login-shell { padding: 24px; }
+  .hero-copy { margin-top: 10vh; }
+  .login-card { margin: 20px 0 0; }
+  .feature-row { flex-wrap: wrap; gap: 12px; }
+}
+
+.dashboard-page { min-height: 100vh; background: #e8e9ff; }
+.dashboard-page::before { content: ""; position: fixed; width: 220px; height: 220px; top: 120px; right: -80px; border-radius: 50%; background: #f8b7d1; opacity: .28; filter: blur(3px); animation: drift 8s ease-in-out infinite; pointer-events: none; }
+.dashboard-page::after { content: "✦"; position: fixed; left: 7%; bottom: 13%; color: #786bc9; font-size: 28px; opacity: .35; animation: twinkle 2.4s ease-in-out infinite; pointer-events: none; }
+.dash-header { height: 74px; padding: 0 6vw; display: flex; align-items: center; gap: 30px; background: rgba(255,255,255,.7); border-bottom: 2px solid #fff; }
+.player-chip, .logout-button, .mission-count { font-family: "DM Mono", monospace; letter-spacing: .08em; font-size: 12px; }
+.player-chip { margin-left: auto; color: #7169bc; }
+.player-chip span { margin-left: 15px; color: #ed4e68; }
+.logout-button { border: 0; background: transparent; color: #7169bc; font-size: 11px; cursor: pointer; }
+.dashboard-content { width: min(1120px, 100%); margin: auto; padding: 55px 6vw 70px; }
+.welcome-row { display: flex; justify-content: space-between; align-items: flex-end; }
+.welcome-row h1 { font-size: clamp(44px, 7vw, 76px); margin: 18px 0 10px; }
+.dashboard-intro { color: #77778d; font-size: 16px; }
+.streak-card { min-width: 150px; padding: 18px; color: #fff; background: #786bc9; border-radius: 6px; box-shadow: 6px 6px 0 #51479e; display: grid; gap: 3px; }
+.streak-card .flame { font-size: 25px; color: #ffd470; }
+.streak-card strong { font-family: "DM Mono", monospace; font-size: 15px; }
+.streak-card small { opacity: .8; }
+.floating { animation: float 3.6s ease-in-out infinite; }
+.stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 30px 0 58px; }
+.stat-card { padding: 20px; background: #fff; border-left: 6px solid #786bc9; box-shadow: 4px 4px 0 #c3bee9; }
+.stat-card.pink { border-color: #ed6f91; }
+.stat-card.blue { border-color: #5bb9d4; }
+.stat-card small { display: block; color: #77778d; font-family: "DM Mono", monospace; font-size: 10px; }
+.stat-card strong { display: block; margin: 8px 0 2px; color: #44437e; font-size: 28px; }
+.stat-card span { color: #9998ad; font-size: 12px; }
+.stat-button { width: 100%; text-align: left; border-top: 0; border-right: 0; border-bottom: 0; cursor: pointer; transition: transform .2s ease; }
+.stat-button:hover { transform: translateY(-4px); }
+.stat-card { animation: rise .6s both; }
+.stat-card:nth-child(2) { animation-delay: .1s; }
+.stat-card:nth-child(3) { animation-delay: .2s; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 18px; }
+.section-heading h2 { margin: 5px 0 0; color: #303052; font-size: 27px; }
+.mission-count { color: #8582b6; font-size: 10px; }
+.quest-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.quest-card { border: 0; padding: 18px; text-align: left; display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 10px; color: #fff; border-radius: 5px; box-shadow: 5px 5px 0 rgba(58,53,111,.25); cursor: pointer; }
+.quest-card.purple { background: #786bc9; }
+.quest-card.pink { background: #e8759b; }
+.quest-card.blue { background: #58b7d2; }
+.quest-icon { font-size: 25px; }
+.quest-card b, .quest-card small { display: block; }
+.quest-card b { font-family: "DM Mono", monospace; font-size: 11px; }
+.quest-card small { margin-top: 5px; opacity: .8; }
+.quest-card strong { font-family: "DM Mono", monospace; font-size: 10px; }
+.quest-message { margin-top: 14px; color: #a45b74; font-size: 13px; }
+.quest-card { transition: transform .2s ease, box-shadow .2s ease; }
+.quest-card:hover { transform: translateY(-5px) rotate(-1deg); box-shadow: 7px 9px 0 rgba(58,53,111,.25); }
+.quote-card { display: flex; align-items: center; gap: 18px; margin: 0 0 58px; padding: 20px 26px; color: #514b7d; background: #fff4d6; border: 2px solid #fff; box-shadow: 5px 5px 0 #e1c990; animation: rise .7s .25s both; }
+.quote-card p { margin: 0 0 6px; font-size: 18px; font-weight: 600; }
+.quote-card small { color: #a18d63; font-family: "DM Mono", monospace; font-size: 10px; }
+.quote-mark { color: #e6ab35; font-family: Georgia, serif; font-size: 52px; line-height: .7; }
+.quote-sparkle { margin-left: auto; color: #e6ab35; font-size: 25px; animation: twinkle 2s infinite; }
+.journey-section { margin-top: 58px; }
+.journey-grid { display: grid; grid-template-columns: 1fr 45px 1fr 45px 1fr; align-items: center; }
+.journey-step { min-height: 150px; padding: 18px; background: rgba(255,255,255,.72); border: 2px solid #fff; box-shadow: 4px 4px 0 #c3bee9; }
+.journey-step.active { border-top: 6px solid #786bc9; }
+.journey-step span { color: #786bc9; font-family: "DM Mono", monospace; font-size: 12px; }
+.journey-step b { display: block; margin-top: 13px; color: #303052; font-family: "DM Mono", monospace; font-size: 13px; }
+.journey-step p { color: #77778d; font-size: 13px; line-height: 1.45; }
+.journey-line { height: 3px; background: #b7b0e3; position: relative; }
+.journey-line::after { content: "›"; position: absolute; right: -2px; top: -16px; color: #786bc9; font-size: 28px; }
+.animate-in { animation: rise .6s both; }
+@keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%,100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-8px) rotate(-2deg); } }
+@keyframes drift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-25px,20px); } }
+@keyframes twinkle { 0%,100% { opacity: .3; transform: scale(.9) rotate(0); } 50% { opacity: 1; transform: scale(1.15) rotate(18deg); } }
+.world-section { margin-top: 58px; }
+.add-world { display: flex; max-width: 500px; margin-bottom: 18px; }
+.add-world input { border-radius: 4px 0 0 4px; }
+.add-world button { border: 0; padding: 0 16px; color: #fff; background: #51479e; font-family: "DM Mono", monospace; font-size: 11px; cursor: pointer; }
+.world-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+.world-card { min-height: 125px; padding: 18px; text-align: left; border: 2px solid #fff; border-top: 7px solid var(--world-color,#786bc9); background: rgba(255,255,255,.75); color: #303052; box-shadow: 4px 4px 0 #c3bee9; cursor: pointer; }
+.world-symbol { display: block; color: var(--world-color,#786bc9); font-size: 25px; }
+.world-card b { display: block; margin: 12px 0; font-size: 20px; }
+.world-card small { color: #7774aa; font-family: "DM Mono", monospace; font-size: 10px; }
+.empty-world { grid-column: 1/-1; padding: 28px; color: #77778d; text-align: center; background: rgba(255,255,255,.5); border: 2px dashed #bbb7e1; }
+.back-button { border: 0; background: transparent; color: #7169bc; font-family: "DM Mono", monospace; font-size: 11px; cursor: pointer; }
+.subject-content { padding-top: 48px; }
+.subject-title { font-size: clamp(48px, 8vw, 86px); margin: 14px 0 8px; }
+.subject-actions { display: flex; gap: 15px; align-items: center; margin: 32px 0 48px; }
+.action-badge { padding: 13px 18px; color: #7169bc; background: #fff; font-family: "DM Mono", monospace; font-size: 11px; box-shadow: 4px 4px 0 #c3bee9; }
+.material-layout { display: grid; grid-template-columns: 1.35fr .8fr; gap: 28px; align-items: start; }
+.material-list { display: grid; gap: 14px; }
+.material-card { padding: 20px; background: rgba(255,255,255,.78); border-left: 6px solid #786bc9; box-shadow: 4px 4px 0 #c3bee9; }
+.material-icon { float: left; margin-right: 12px; color: #786bc9; font-size: 27px; }
+.material-card h3 { margin: 0 0 8px; color: #303052; font-size: 20px; }
+.material-card p { clear: both; margin: 14px 0 18px; color: #77778d; line-height: 1.5; }
+.summary-button { border: 0; padding: 10px 12px; color: #fff; background: #786bc9; font-family: "DM Mono", monospace; font-size: 10px; cursor: pointer; }
+.note-card { padding: 24px; background: rgba(255,255,255,.75); border: 2px solid #fff; box-shadow: 5px 5px 0 #c3bee9; }
+.note-card h2 { margin: 6px 0 20px; color: #303052; }
+.note-card textarea { min-height: 180px; width: 100%; resize: vertical; padding: 14px; border: 2px solid #c8c7e5; border-radius: 4px; outline: none; color: #20213a; }
+.note-card .primary-button { width: 100%; margin-top: 12px; }
+.summary-panel { margin-top: 34px; padding: 26px; white-space: pre-wrap; color: #4e4e71; background: #fff4d6; border: 2px solid #fff; box-shadow: 5px 5px 0 #e1c990; line-height: 1.6; }
+.summary-panel h2 { margin: 5px 0 16px; color: #4b4266; }
+.material-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+.quiz-button { border: 0; padding: 10px 12px; color: #fff; background: #e8759b; font-family: "DM Mono", monospace; font-size: 10px; cursor: pointer; }
+.quiz-content { max-width: 900px; }
+.quiz-form { margin-top: 38px; }
+.question-card { padding: 24px; border: 2px solid #fff; background: rgba(255,255,255,.78); box-shadow: 5px 5px 0 #c3bee9; }
+.question-card legend { padding: 0 8px; color: #303052; font-size: 20px; font-weight: 600; }
+.question-card legend span { display: inline-block; margin-right: 12px; color: #786bc9; font-family: "DM Mono", monospace; font-size: 13px; }
+.options { display: grid; gap: 10px; margin-top: 20px; }
+.option { display: flex; align-items: center; gap: 10px; padding: 12px; color: #5c5c79; background: #f5f3ff; border: 2px solid transparent; cursor: pointer; }
+.option:has(input:checked) { color: #51479e; background: #e5e0ff; border-color: #786bc9; }
+.option input { width: auto; accent-color: #786bc9; }
+.submit-quiz { width: 100%; margin-top: 10px; }
+.result-card { max-width: 480px; margin: 48px auto; padding: 38px; text-align: center; background: #fff4d6; border: 2px solid #fff; box-shadow: 7px 7px 0 #e1c990; }
+.result-star { display: block; color: #e6ab35; font-size: 42px; }
+.result-card h2 { margin: 8px 0; color: #4b4266; font-size: 28px; }
+.result-card strong { display: block; color: #786bc9; font-size: 64px; }
+.result-card .primary-button { margin-top: 20px; }
+.flashcard-content { max-width: 800px; }
+.flashcard { width: 100%; min-height: 310px; margin: 38px 0 20px; padding: 40px; display: grid; place-items: center; gap: 18px; border: 4px solid #fff; border-radius: 8px; color: #fff; background: linear-gradient(135deg,#786bc9,#ae8bd6); box-shadow: 9px 9px 0 #51479e; cursor: pointer; transition: transform .25s ease, background .3s ease; }
+.flashcard:hover { transform: translateY(-5px) rotate(.5deg); }
+.flashcard.revealed { background: linear-gradient(135deg,#e8759b,#e8a1bd); box-shadow: 9px 9px 0 #b65979; }
+.flashcard .card-label { font-family: "DM Mono", monospace; font-size: 11px; letter-spacing: .12em; opacity: .8; }
+.flashcard strong { max-width: 620px; font-size: clamp(23px,4vw,38px); line-height: 1.2; }
+.flashcard small { opacity: .8; }
+.flashcard-controls { display: flex; justify-content: space-between; gap: 12px; }
+.secondary-button { padding: 14px 18px; border: 2px solid #bbb7e1; color: #7169bc; background: #fff; font-family: "DM Mono", monospace; font-size: 11px; cursor: pointer; }
+.secondary-button:disabled { cursor: not-allowed; opacity: .45; }
+.progress-stat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; margin: 42px 0; }
+.progress-big-card { padding: 25px; color: #fff; border-radius: 5px; box-shadow: 6px 6px 0 rgba(58,53,111,.25); }
+.progress-big-card.purple { background: #786bc9; }
+.progress-big-card.pink { background: #e8759b; }
+.progress-big-card.blue { background: #58b7d2; }
+.progress-big-card small { display: block; font-family: "DM Mono", monospace; font-size: 10px; opacity: .8; }
+.progress-big-card strong { display: block; margin: 10px 0 3px; font-size: 40px; }
+.progress-big-card span { font-size: 13px; opacity: .85; }
+.progress-panel { padding: 26px; background: rgba(255,255,255,.72); border: 2px solid #fff; box-shadow: 5px 5px 0 #c3bee9; }
+.attempt-row { display: flex; align-items: center; gap: 14px; padding: 16px 0; border-top: 1px solid #dedcf2; }
+.attempt-icon { color: #e6ab35; font-size: 22px; }
+.attempt-row div { flex: 1; }
+.attempt-row b, .attempt-row small { display: block; }
+.attempt-row b { color: #303052; }
+.attempt-row small { margin-top: 4px; color: #9290a8; font-family: "DM Mono", monospace; font-size: 10px; }
+.attempt-row strong { color: #786bc9; font-family: "DM Mono", monospace; }
+.level-panel { margin-top: 28px; padding: 24px; background: #fff4d6; border: 2px solid #fff; box-shadow: 5px 5px 0 #e1c990; }
+.level-panel h2 { margin: 6px 0; color: #4b4266; }
+.level-panel p { color: #8c7958; }
+.level-track { height: 13px; margin-top: 18px; overflow: hidden; border: 3px solid #fff; background: #dfd5b6; }
+.level-track span { display: block; height: 100%; background: #e6ab35; transition: width .8s ease; }
+@media (max-width: 760px) {
+  .dash-header { padding: 0 24px; }
+  .dashboard-content { padding: 35px 24px; }
+  .welcome-row { align-items: start; gap: 20px; flex-direction: column; }
+  .stat-grid, .quest-grid, .world-grid { grid-template-columns: 1fr; }
+  .progress-stat-grid { grid-template-columns: 1fr; }
+  .journey-grid { grid-template-columns: 1fr; gap: 12px; }
+  .journey-line { width: 3px; height: 24px; margin-left: 22px; }
+  .journey-line::after { content: "↓"; top: -8px; right: -8px; }
+  .streak-card { min-width: 130px; }
+  .add-world { flex-direction: column; gap: 8px; }
+  .add-world input { border-radius: 4px; }
+  .add-world button { padding: 13px; border-radius: 4px; }
+  .material-layout { grid-template-columns: 1fr; }
+  .subject-actions { align-items: flex-start; flex-direction: column; }
+}

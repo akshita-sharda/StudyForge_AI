@@ -1,0 +1,6 @@
+.env
+.venv/
+uploads/
+studyforge.db
+__pycache__/
+.pytest_cache/

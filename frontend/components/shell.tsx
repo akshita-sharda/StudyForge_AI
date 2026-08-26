@@ -1,0 +1,1 @@
+import {Nav} from './nav'; export function Shell({children}:{children:React.ReactNode}){return <div className="study-page min-h-screen bg-[#fff9ed]"><div className="flex"><Nav/><main className="min-w-0 flex-1 p-5 md:p-9">{children}</main></div></div>}
