@@ -1,6 +1,0 @@
-{
-  "/quiz/page": "app/quiz/page.js",
-  "/library/page": "app/library/page.js",
-  "/onboarding/page": "app/onboarding/page.js",
-  "/dashboard/page": "app/dashboard/page.js"
-}
